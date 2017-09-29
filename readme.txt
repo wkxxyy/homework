@@ -1,0 +1,10 @@
+dataclass:
+	Data：数据对象类，其中可以生成正态分布，均匀分布，齐夫分布
+Util：
+	ObjectSerialization：数据对象序列化类，用来序列化对象并且存储到文件当中
+
+CreateDataDis：此类用来生成数据对象，方便以后添加其他数据分布，其中根据region判断要生成的数据对象
+
+StartCalculator：主类：用来获取各种需要顾客指定的数值，例如高低阈值和增长减少的值，并且最后输出三个区分割之后的收益
+
+其中StartCalculator类中的outPutMessage方法屏蔽了一些其他输出信息，如果需要可以取消注释即可
