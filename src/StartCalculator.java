@@ -101,7 +101,7 @@ public class StartCalculator {
         int N = inPutScanner.nextInt();
 
 
-        while (true) {//输入k
+        while (true) {//输入S
             System.out.println("请输入齐方分布的S,  要求：大于0小于1");
             double temp = inPutScanner.nextDouble();
             if (temp > 0 && temp < 1) {

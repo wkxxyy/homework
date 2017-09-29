@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d3a6eeb-0879-4f5d-8dbe-f86573d81fa2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CreateDataDis.java" afterPath="$PROJECT_DIR$/src/CreateDataDis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StartCalculator.java" afterPath="$PROJECT_DIR$/src/StartCalculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataclass/Data.java" afterPath="$PROJECT_DIR$/src/dataclass/Data.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,8 +83,8 @@
       <file leaf-file-name="StartCalculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StartCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="128" column="62" lean-forward="false" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="62" />
+            <state relative-caret-position="267">
+              <caret line="103" column="27" lean-forward="false" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,9 +147,9 @@
         <option value="$PROJECT_DIR$/src/ZipfDistribution.java" />
         <option value="$PROJECT_DIR$/src/Util/ObjectSerialization.java" />
         <option value="$PROJECT_DIR$/src/Util/DataUtil.java" />
-        <option value="$PROJECT_DIR$/src/StartCalculator.java" />
         <option value="$PROJECT_DIR$/src/CreateDataDis.java" />
         <option value="$PROJECT_DIR$/src/dataclass/Data.java" />
+        <option value="$PROJECT_DIR$/src/StartCalculator.java" />
       </list>
     </option>
   </component>
@@ -166,7 +165,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1444" />
@@ -370,15 +369,15 @@
       <workItem from="1506515932224" duration="638000" />
       <workItem from="1506585876082" duration="587000" />
       <workItem from="1506647767114" duration="6395000" />
-      <workItem from="1506686655170" duration="420000" />
+      <workItem from="1506686655170" duration="641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89271000" />
+    <option name="totallyTimeSpent" value="89492000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -672,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StartCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="128" column="62" lean-forward="false" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="62" />
+        <state relative-caret-position="267">
+          <caret line="103" column="27" lean-forward="false" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
