@@ -31,7 +31,7 @@ public class CreateDataDis {
 
     }
 
-    public static Data generateDistribution(int region,int n,int s,int k){
+    public static Data generateDistribution(int region,double n,double s,double k){
         if (region==ZIPFDIS_DIS){
             disData=new Data(Data.ZIPF_DIS,n,s,k);
         }

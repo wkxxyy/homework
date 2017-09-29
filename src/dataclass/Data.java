@@ -13,8 +13,8 @@ public class Data implements Serializable{
     public static final int MIDILE_LOCAL=2;
     public static final int HIGH_LOCAL=3;
 
-    private int N;
-    private int S;
+    private double N;
+    private double S;
 
 
     private double disData;//数据存储
@@ -32,7 +32,7 @@ public class Data implements Serializable{
         }
     }
 
-    public Data(int sign,int n,int s,int k) {
+    public Data(int sign,double n,double s,double k) {
        if (sign == ZIPF_DIS) {
             initZipfDisData(n,s,k);
         }
@@ -55,7 +55,7 @@ public class Data implements Serializable{
 
     }
 
-    private void initZipfDisData(int n,int s,int k) {
+    private void initZipfDisData(double n,double s,double k) {
         this.N=n;
         this.S=s;
         double temp=( 1 / Math.pow(k, this.S) ) / H(this.N, this.S);
@@ -87,7 +87,7 @@ public class Data implements Serializable{
         this.newLocalSign = newLocalSign;
     }
 
-    public double H(int n, int s) { // Harmonic number
+    public double H(double n, double s) { // Harmonic number
         if(n == 1) {
             return 1.0 / Math.pow(n,s);
         } else {

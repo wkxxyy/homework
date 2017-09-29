@@ -17,11 +17,13 @@ public class StartCalculator {
     private static double m = 0;//low区要提升的值
     private static double n = 0;//midle区要提升的值
     private static double k = 0;//high区要降低的值
-    private static int  region=0;//用来选择分布的变量
+
+    private static double S = 0;//齐夫分布的S
+    private static int region = 0;//用来选择分布的变量
 
     //private static CreateDataDis createDataDis;//用来创建分布数据对象的对象；
 
-    private static Data[] dataDisList =new Data[10000];//用来接收存贮从CreateDataDis返回的数据对象,以后操作的都是这个数据对象数组
+    private static Data[] dataDisList = new Data[10000];//用来接收存贮从CreateDataDis返回的数据对象,以后操作的都是这个数据对象数组
 
     private static double[] newLowDataArrays;
     private static double[] newMidileDataArrays;
@@ -97,8 +99,20 @@ public class StartCalculator {
 
         System.out.println("请输入齐方分布的N");
         int N = inPutScanner.nextInt();
-        System.out.println("请输入齐方分布的S");
-        int S = inPutScanner.nextInt();
+
+
+        while (true) {//输入k
+            System.out.println("请输入齐方分布的S,  要求：大于0小于1");
+            double temp = inPutScanner.nextDouble();
+            if (temp > 0 && temp < 1) {
+                S = temp;
+                break;
+            } else {
+                System.out.println("输入不符合要求，请重新输入");
+                continue;
+            }
+        }
+
         System.out.println("请输入齐方分布的K");
         int K = inPutScanner.nextInt();
 
@@ -106,7 +120,7 @@ public class StartCalculator {
         for (int s = 1; s <= 3; s++) {//循环生成三个分布，打印数据
 
             //region = inPutScanner.nextInt();//从控制台获取要生成的分布的对应值
-            region=s;
+            region = s;
 
             if (region == 3) {//根据标识判断生成的分布
 
@@ -123,9 +137,6 @@ public class StartCalculator {
 
 
             ObjectSerialization.objectSerialization(dataDisList, region);//序列化对象，把对象存储到文件中去
-
-
-
 
 
             List<Data> lowList = DataUtil.getLowDataList(dataDisList, lowThreshold, highThreshold);//分割数组，获取低区数组
@@ -164,13 +175,14 @@ public class StartCalculator {
 
         }
     }
+
     /*
         用来输出数据对象个最大值，最小值，中位数，平均值
      */
-    private static void outPutMessage(String name){
-        double[] dataArrays=new double[100000];
-        for (int i=0;i<10000;i++){
-            dataArrays[i]=dataDisList[i].getDisData();
+    private static void outPutMessage(String name) {
+        double[] dataArrays = new double[100000];
+        for (int i = 0; i < 10000; i++) {
+            dataArrays[i] = dataDisList[i].getDisData();
         }
         System.out.println();
         System.out.println("*****************************************");
@@ -183,28 +195,28 @@ public class StartCalculator {
         //System.out.println(name+"分割后的midile区数据为"+Arrays.toString(newMidileDataArrays));
         //System.out.println(name+"分割后的high区数据为"+Arrays.toString(newHighDataArrays));
 
-        System.out.println(name+"收益为：" +DataUtil.getCalculatorReslut(dataDisList,m,n,k));
-        System.out.println(name+"的Benefit为："+DataUtil.getBenefit());
-        System.out.println(name+"的Cost为："+DataUtil.getCost());
+        System.out.println(name + "收益为：" + DataUtil.getCalculatorReslut(dataDisList, m, n, k));
+        System.out.println(name + "的Benefit为：" + DataUtil.getBenefit());
+        System.out.println(name + "的Cost为：" + DataUtil.getCost());
 
         int[][] costMatrix = DataUtil.getCostMatrix();
         System.out.println(" \tp1 p2 p3");
         System.out.println("------------------");
 
         System.out.print("p1");
-        System.out.print("\t"+costMatrix[0][0]);
-        System.out.print("  "+costMatrix[0][1]);
-        System.out.println("  "+costMatrix[0][2]);
+        System.out.print("\t" + costMatrix[0][0]);
+        System.out.print("  " + costMatrix[0][1]);
+        System.out.println("  " + costMatrix[0][2]);
 
         System.out.print("p2");
-        System.out.print("\t"+costMatrix[1][0]);
-        System.out.print("  "+costMatrix[1][1]);
-        System.out.println("  "+costMatrix[1][2]);
+        System.out.print("\t" + costMatrix[1][0]);
+        System.out.print("  " + costMatrix[1][1]);
+        System.out.println("  " + costMatrix[1][2]);
 
         System.out.print("p3");
-        System.out.print("\t"+costMatrix[2][0]);
-        System.out.print("  "+costMatrix[2][1]);
-        System.out.println("  "+costMatrix[2][2]);
+        System.out.print("\t" + costMatrix[2][0]);
+        System.out.print("  " + costMatrix[2][1]);
+        System.out.println("  " + costMatrix[2][2]);
         System.out.println("*****************************************");
 
     }
