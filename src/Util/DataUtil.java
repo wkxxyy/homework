@@ -161,6 +161,7 @@ public class DataUtil {
     public static List<Data> getLowDataList(Data[] disDataArrays,double lowThreshol, double highThreshol ) {
         lowThreshold = lowThreshol;
         highThreshold = highThreshol;
+        oldLowDataList.clear();
         for (int i = 0; i < disDataArrays.length; i++) {
             if (disDataArrays[i].getDisData() <= lowThreshold) {
                 oldLowDataList.add(disDataArrays[i]);
@@ -178,6 +179,7 @@ public class DataUtil {
     public static List<Data> getMidileDataList(Data[] disDataArrays,double lowThreshol, double highThreshol) {
         lowThreshold = lowThreshol;
         highThreshold = highThreshol;
+        oldMidileDataList.clear();
         for (int i = 0; i < disDataArrays.length; i++) {
             if (lowThreshold < disDataArrays[i].getDisData() && disDataArrays[i].getDisData() <= highThreshold) {
                 oldMidileDataList.add(disDataArrays[i]);
@@ -194,6 +196,7 @@ public class DataUtil {
     public static List<Data> getHighDataList(Data[] disDataArrays,double lowThreshol, double highThreshol) {
         lowThreshold = lowThreshol;
         highThreshold = highThreshol;
+        oldHighDataList.clear();
         for (int i = 0; i < disDataArrays.length; i++) {
             if (disDataArrays[i].getDisData() > highThreshold) {
                 oldHighDataList.add(disDataArrays[i]);
@@ -203,6 +206,7 @@ public class DataUtil {
         }
         return oldHighDataList;
     }
+
 
 
     public static double getCalculatorReslut(Data[] disDataArrays,double m, double n, double k) {

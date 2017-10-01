@@ -1,7 +1,10 @@
 import Util.DataUtil;
 import Util.ObjectSerialization;
+import Util.OutPutExcel;
+import com.sun.deploy.util.ArrayUtil;
 import dataclass.Data;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -98,7 +101,7 @@ public class StartCalculator {
         }
 
         System.out.println("请输入齐方分布的N");
-        int N = inPutScanner.nextInt();
+        double N = inPutScanner.nextInt();
 
 
         while (true) {//输入S
@@ -114,7 +117,7 @@ public class StartCalculator {
         }
 
         System.out.println("请输入齐方分布的K");
-        int K = inPutScanner.nextInt();
+        double K = inPutScanner.nextInt();
 
 
         for (int s = 1; s <= 3; s++) {//循环生成三个分布，打印数据
@@ -167,6 +170,32 @@ public class StartCalculator {
             } else {
                 outPutMessage("齐方分布");
             }
+
+            double[] oldDataExcel=new double[10000];//存放往excel写的旧数据；
+            for (int i = 0; i < 10000; i++) {
+                oldDataExcel[i] = dataDisList[i].getDisData();
+            }
+
+            double[] newDataExcel;//拼接改变后的三个区数据，作为新的数据
+            List<Double> newDataList =new ArrayList<Double>();//拼接改变后的三个区数据，作为新的数据
+            newDataList.clear();
+            for (int i=0;i<newLowDataArrays.length;i++){
+                newDataList.add(newLowDataArrays[i]);
+            }
+            for (int i=0;i<newMidileDataArrays.length;i++){
+                newDataList.add(newMidileDataArrays[i]);
+            }
+            for (int i=0;i<newHighDataArrays.length;i++){
+                newDataList.add(newHighDataArrays[i]);
+            }
+            System.out.println("集合大小"+newDataList.size());
+
+            newDataExcel=new double[newDataList.size()];
+            for (int i=0;i<newDataList.size();i++){
+                newDataExcel[i]=newDataList.get(i);
+            }
+
+            OutPutExcel.writeExcel(s,oldDataExcel,newDataExcel);//写入excel文件
 
         /*
         //输出三个区变化后的收益，getCalculatorResult()方法就是进行收益计算的方法
